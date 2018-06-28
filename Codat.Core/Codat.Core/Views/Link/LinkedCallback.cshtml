@@ -1,0 +1,26 @@
+﻿@model LinkedCallbackViewModel
+@{
+    ViewData["Title"] = "Codat - Linking Callback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <h2>@Model.Company.Name</h2>
+        </div>
+        <div class="row">
+            <p>Callback value:</p>
+            <p>@Model.CallBackValue</p>
+        </div>
+        <div class="row">
+            Data sets:
+            <ul>
+                @foreach (var dataset in Model.DataSets)
+                {
+                    <li>@dataset.DataType - @dataset.Status</li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

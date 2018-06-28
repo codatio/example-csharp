@@ -1,0 +1,26 @@
+﻿@model Codat.Core.Controllers.PushDataPostModel
+@{
+    ViewData["Title"] = "Codat - Push bank statements";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <form method="POST">
+            <div class="form-group">
+                <label for="accountId">Destination bank account ID<small>will create new if not specified</small></label>
+                <input id="accountId" name="accountId" class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description or transaction reference</label>
+                <input id="description" name="description" class="form-control" type="text" />
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount <small>-ve is debit, +ve is credit</small></label>
+                <input id="amount" name="amount" class="form-control" type="number" step="0.01" />
+            </div>
+            <input type="submit" value="Push" class="btn btn-primary" />
+        </form>
+    </div>
+</div>
+
