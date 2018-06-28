@@ -1,0 +1,32 @@
+﻿@model IntegrationsViewModel
+@{
+    ViewData["Title"] = "Codat - Home";
+}
+<div class="container">
+    <div class="row">
+
+        <h2>Linking <small>Please select a platform to start integration</small></h2>
+
+        @foreach (var integration in Model.Integrations)
+        {
+            <div class="col-sm-4">
+                <a href="/link/@integration.Key">
+                    <img src="@integration.LogoUrl" />
+                </a>
+            </div>
+        }
+    </div>
+    <div class="row">
+
+        <h2>Data <small>Please select a company to interact with data</small></h2>
+
+        @foreach (var company in Model.Companies)
+        {
+            <div class="col-sm-6">
+                <a href="/data/@company.Id">
+                    @company.Name
+                </a>
+            </div>
+        }
+    </div>
+</div>

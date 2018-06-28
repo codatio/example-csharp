@@ -1,0 +1,31 @@
+﻿@model LinkViewModel
+@{
+    ViewData["Title"] = "Codat - Linking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div>
+            <div>
+                <h3 style="display: inline-block">Selected platform:</h3>
+                <img style="display: inline-block" src="@Model.SelectedIntegration.LogoUrl"/>
+            </div>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="companyId">Company ID (leave blank to create new company)</label>
+                    <input id="companyId" type="text" class="form-control" name="companyId" />
+                </div>
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input id="companyName" type="text" class="form-control" name="companyName" />
+                </div>
+
+                <input type="text" value="@Model.SelectedIntegration.Key" hidden name="platformKey"/>
+
+                <input type="submit" class="btn btn-primary" value="OK" />
+            </form>
+        </div>
+    </div>
+</div>
+

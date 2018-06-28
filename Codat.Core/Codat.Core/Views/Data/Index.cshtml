@@ -1,0 +1,24 @@
+﻿@model Codat.Core.Controllers.DataViewModel
+@{
+    ViewData["Title"] = "Codat - Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <h1>@Model.Company.Name <small>@Model.Company.Status</small></h1>
+    </div>
+    <div>
+        <ul>
+            @foreach(var dataset in Model.DataSets)
+            {
+                <li>
+                    @dataset.DataType - @dataset.Status 
+                    <a href="@Model.Company.Id/pull/@dataset.DataType">Pull</a>
+                    <a href="@Model.Company.Id/push/@dataset.DataType">Push</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+

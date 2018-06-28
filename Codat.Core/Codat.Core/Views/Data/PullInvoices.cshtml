@@ -1,0 +1,36 @@
+﻿@model List<Codat.Public.Client.Invoice>
+@{
+    ViewData["Title"] = "Codat - Data Invoices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>InvoiceNumber</th>
+                    <th>Currency</th>
+                    <th>TotalAmount</th>
+                    <th>AmountDue</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var invoice in Model)
+            {
+                <tr>
+                    <td>@invoice.Id</td>
+                    <td>@invoice.InvoiceNumber</td>
+                    <td>@invoice.Currency</td>
+                    <td>@invoice.TotalAmount</td>
+                    <td>@invoice.AmountDue</td>
+                    <td>@invoice.Status</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
